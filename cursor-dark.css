@@ -6,6 +6,66 @@ Version: 1.0.0
 */
 
 /* ============================================
+   Font Faces - Local Font Files
+   ============================================ */
+
+@font-face {
+  font-family: "CursorGothic";
+  src: url("./fonts/CursorGothic_Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CursorGothic";
+  src: url("./fonts/CursorGothic_Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CursorGothic";
+  src: url("./fonts/CursorGothic_Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "CursorGothic";
+  src: url("./fonts/CursorGothic_BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "jjannon";
+  src: url("./fonts/AnthropicSerif-Display-Regular-Static.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "jjannon";
+  src: url("./fonts/AnthropicSerif-Display-Semibold-Static.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "berkeleyMono";
+  src: url("./fonts/BerkeleyMono_Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "berkeleyMono";
+  src: url("./fonts/BerkeleyMono_Oblique.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* ============================================
    CSS Variables - Cursor Design System (Dark Mode)
    ============================================ */
 

@@ -6,6 +6,59 @@ Version: 1.0.0
 */
 
 /* ============================================
+   Font Faces - Local Font Files
+   ============================================ */
+
+@font-face {
+  font-family: "Anthropic Serif";
+  src: url("./fonts/AnthropicSerif-Display-Regular-Static.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Anthropic Serif";
+  src: url("./fonts/AnthropicSerif-Display-Semibold-Static.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Anthropic Sans";
+  src: url("./fonts/AnthropicSans-Text-Regular-Static.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Anthropic Sans";
+  src: url("./fonts/AnthropicSans-Text-Medium-Static.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Anthropic Sans";
+  src: url("./fonts/AnthropicSans-Text-Semibold-Static.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Anthropic Mono";
+  src: url("./fonts/BerkeleyMono_Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Anthropic Mono";
+  src: url("./fonts/BerkeleyMono_Oblique.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* ============================================
    CSS Variables - Claude Design System (Dark Mode)
    ============================================ */
 
