@@ -189,39 +189,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 72px;
-  line-height: 1.1;
-  letter-spacing: -2.16px;
-  margin-top: var(--space-7xl);
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  margin-top: var(--space-5xl);
   margin-bottom: var(--space-3xl);
 }
 
 h2 {
-  font-size: 36px;
-  line-height: 1.2;
-  letter-spacing: -0.72px;
+  font-size: 26px;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
 }
 
 h3 {
-  font-size: 26px;
-  line-height: 1.25;
-  letter-spacing: -0.325px;
+  font-size: 22px;
+  line-height: 1.3;
+  letter-spacing: -0.2px;
 }
 
 h4 {
-  font-size: 22px;
-  line-height: 1.3;
-  letter-spacing: -0.11px;
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: -0.1px;
 }
 
 h5 {
-  font-size: 18px;
-  line-height: 1.35;
+  font-size: 16px;
+  line-height: 1.4;
   letter-spacing: normal;
 }
 
 h6 {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.4;
   letter-spacing: normal;
 }
@@ -772,22 +772,22 @@ sup a {
   }
 
   h1 {
-    font-size: 36px;
-    letter-spacing: -0.72px;
+    font-size: 28px;
+    letter-spacing: -0.3px;
   }
 
   h2 {
-    font-size: 26px;
-    letter-spacing: -0.325px;
+    font-size: 24px;
+    letter-spacing: -0.2px;
   }
 
   h3 {
-    font-size: 22px;
-    letter-spacing: -0.11px;
+    font-size: 20px;
+    letter-spacing: -0.1px;
   }
 
   h4 {
-    font-size: 18px;
+    font-size: 17px;
     letter-spacing: normal;
   }
 }
@@ -798,13 +798,13 @@ sup a {
   }
 
   h1 {
-    font-size: 28px;
-    letter-spacing: -0.3px;
+    font-size: 24px;
+    letter-spacing: -0.2px;
   }
 
   h2 {
-    font-size: 22px;
-    letter-spacing: -0.11px;
+    font-size: 20px;
+    letter-spacing: -0.1px;
   }
 
   h3 {
