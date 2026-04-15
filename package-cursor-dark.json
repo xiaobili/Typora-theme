@@ -1,0 +1,19 @@
+{
+  "name": "cursor-dark",
+  "version": "1.0.0",
+  "description": "A warm, dark Typora theme inspired by Cursor's design system - featuring deep warm tones, gothic typography, and atmospheric depth.",
+  "typora": {
+    "name": "Cursor Dark",
+    "author": "Generated from Cursor Design System",
+    "version": "1.0.0",
+    "isDark": true,
+    "tags": [
+      "dark",
+      "warm",
+      "minimalist",
+      "gothic",
+      "editorial",
+      "atmospheric"
+    ]
+  }
+}

@@ -1,0 +1,827 @@
+/*
+Theme Name: Cursor Dark
+Description: A warm, dark Typora theme inspired by Cursor's design system - featuring deep warm tones, gothic typography, and atmospheric depth.
+Author: Generated from Cursor Design System
+Version: 1.0.0
+*/
+
+/* ============================================
+   CSS Variables - Cursor Design System (Dark Mode)
+   ============================================ */
+
+:root {
+  /* Primary Colors */
+  --cursor-dark: #e6e5e0;
+  --cursor-cream: #1a1915;
+  --cursor-light: #262520;
+  --pure-white: #ffffff;
+  --true-black: #000000;
+
+  /* Accent Colors */
+  --cursor-orange: #f54e00;
+  --gold: #c08532;
+
+  /* Semantic Colors */
+  --error-warm: #cf2d56;
+  --success-teal: #1f8a65;
+
+  /* Timeline / Feature Colors */
+  --thinking-peach: #dfa88f;
+  --grep-sage: #9fc9a2;
+  --read-blue: #9fbbe0;
+  --edit-lavender: #c0a8dd;
+
+  /* Surface Scale (Dark) */
+  --surface-100: #2a2925;
+  --surface-200: #1a1915;
+  --surface-300: #262520;
+  --surface-400: #2a2925;
+  --surface-500: #2e2d28;
+
+  /* Border Colors (oklab space - inverted for dark) */
+  --border-primary: rgba(230, 229, 224, 0.1);
+  --border-medium: rgba(230, 229, 224, 0.2);
+  --border-strong: rgba(230, 229, 224, 0.55);
+  --border-solid: #e6e5e0;
+  --border-light: #1a1915;
+
+  /* Shadows (Darker, more atmospheric) */
+  --shadow-card: rgba(0, 0, 0, 0.3) 0px 28px 70px, 
+                 rgba(0, 0, 0, 0.2) 0px 14px 32px,
+                 rgba(230, 229, 224, 0.1) 0px 0px 0px 1px;
+  --shadow-ambient: rgba(0, 0, 0, 0.05) 0px 0px 16px,
+                    rgba(0, 0, 0, 0.02) 0px 0px 8px;
+  --shadow-focus: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+
+  /* Typography */
+  --font-gothic: "CursorGothic", "CursorGothic Fallback", system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: "jjannon", "Iowan Old Style", "Palatino Linotype", "URW Palladio L", "P052", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "berkeleyMono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-system: system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+  /* Spacing System (8px base with fine sub-8px increments) */
+  --space-1: 1.5px;
+  --space-2: 2px;
+  --space-3: 2.5px;
+  --space-4: 3px;
+  --space-5: 4px;
+  --space-6: 5px;
+  --space-7: 6px;
+  --space-base: 8px;
+  --space-lg: 10px;
+  --space-xl: 12px;
+  --space-2xl: 16px;
+  --space-3xl: 24px;
+  --space-4xl: 32px;
+  --space-5xl: 48px;
+  --space-6xl: 64px;
+  --space-7xl: 80px;
+  --space-8xl: 96px;
+
+  /* Border Radius Scale */
+  --radius-micro: 1.5px;
+  --radius-small: 2px;
+  --radius-medium: 3px;
+  --radius-standard: 4px;
+  --radius-comfortable: 8px;
+  --radius-featured: 10px;
+  --radius-pill: 9999px;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-system);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--cursor-dark);
+  background-color: var(--cursor-cream);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#write {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-7xl) var(--space-4xl);
+}
+
+/* ============================================
+   Typography Hierarchy
+   ============================================ */
+
+/* Headings - Using CursorGothic with progressive letter-spacing */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-gothic);
+  font-weight: 400;
+  color: var(--cursor-dark);
+  margin-top: var(--space-5xl);
+  margin-bottom: var(--space-2xl);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 72px;
+  line-height: 1.1;
+  letter-spacing: -2.16px;
+  margin-top: var(--space-7xl);
+  margin-bottom: var(--space-3xl);
+}
+
+h2 {
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -0.72px;
+}
+
+h3 {
+  font-size: 26px;
+  line-height: 1.25;
+  letter-spacing: -0.325px;
+}
+
+h4 {
+  font-size: 22px;
+  line-height: 1.3;
+  letter-spacing: -0.11px;
+}
+
+h5 {
+  font-size: 18px;
+  line-height: 1.35;
+  letter-spacing: normal;
+}
+
+h6 {
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: normal;
+}
+
+/* Paragraphs - Using jjannon serif for body text */
+p {
+  font-family: var(--font-serif);
+  font-size: 17.28px;
+  line-height: 1.5;
+  color: var(--cursor-dark);
+  margin-top: 0;
+  margin-bottom: var(--space-2xl);
+  font-feature-settings: "cswh";
+}
+
+/* Lead/Intro text */
+.md-meta-block p:first-of-type,
+#write > p:first-of-type {
+  font-size: 19.2px;
+  line-height: 1.5;
+  color: rgba(230, 229, 224, 0.6);
+}
+
+/* ============================================
+   Links
+   ============================================ */
+
+a {
+  color: var(--cursor-dark);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-primary);
+  transition: all 150ms ease;
+}
+
+a:hover {
+  color: var(--cursor-orange);
+  border-bottom-color: var(--cursor-orange);
+}
+
+/* ============================================
+   Inline Elements
+   ============================================ */
+
+/* Strong/Bold */
+strong, b {
+  font-weight: 500;
+  color: var(--cursor-dark);
+}
+
+/* Emphasis/Italic */
+em, i {
+  font-style: italic;
+  color: rgba(230, 229, 224, 0.6);
+}
+
+/* Strikethrough */
+del, s {
+  color: rgba(230, 229, 224, 0.4);
+  text-decoration: line-through;
+}
+
+/* Highlight */
+mark {
+  background-color: var(--surface-300);
+  color: var(--cursor-dark);
+  padding: var(--space-1) var(--space-5);
+  border-radius: var(--radius-small);
+}
+
+/* ============================================
+   Code
+   ============================================ */
+
+/* Inline Code */
+code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.67;
+  letter-spacing: normal;
+  background-color: var(--surface-300);
+  color: var(--cursor-dark);
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-small);
+  border: 1px solid var(--border-primary);
+}
+
+/* Code Blocks */
+pre {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.67;
+  letter-spacing: normal;
+  background-color: var(--surface-300);
+  color: var(--cursor-dark);
+  padding: var(--space-3xl);
+  border-radius: var(--radius-comfortable);
+  overflow-x: auto;
+  margin: var(--space-3xl) 0;
+  border: 1px solid var(--border-primary);
+}
+
+pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  font-size: inherit;
+  letter-spacing: inherit;
+}
+
+/* Code block language label */
+.md-fences {
+  background-color: var(--surface-300);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-comfortable);
+}
+
+/* ============================================
+   Blockquotes
+   ============================================ */
+
+blockquote {
+  font-family: var(--font-serif);
+  font-size: 17.28px;
+  line-height: 1.5;
+  color: rgba(230, 229, 224, 0.6);
+  margin: var(--space-3xl) 0;
+  padding: var(--space-3xl) var(--space-4xl);
+  border-left: 3px solid var(--cursor-orange);
+  background-color: var(--surface-300);
+  border-radius: 0 var(--radius-comfortable) var(--radius-comfortable) 0;
+  font-feature-settings: "cswh";
+}
+
+blockquote p {
+  margin-bottom: var(--space-base);
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Nested blockquotes */
+blockquote blockquote {
+  margin: var(--space-2xl) 0;
+  border-left-color: var(--gold);
+}
+
+/* ============================================
+   Lists
+   ============================================ */
+
+ul, ol {
+  margin: var(--space-2xl) 0;
+  padding-left: var(--space-5xl);
+}
+
+li {
+  margin-bottom: var(--space-base);
+  line-height: 1.5;
+  font-family: var(--font-serif);
+  font-size: 17.28px;
+}
+
+li > ul,
+li > ol {
+  margin-top: var(--space-base);
+  margin-bottom: 0;
+}
+
+/* Ordered List Hierarchy */
+ol {
+  list-style-type: decimal;
+}
+
+ol ol {
+  list-style-type: lower-roman;
+}
+
+ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+ol ol ol ol {
+  list-style-type: decimal;
+}
+
+/* Task lists */
+input[type="checkbox"] {
+  margin-right: var(--space-base);
+  accent-color: var(--cursor-orange);
+}
+
+/* ============================================
+   Tables
+   ============================================ */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-3xl) 0;
+  background-color: var(--surface-400);
+  border-radius: var(--radius-comfortable);
+  overflow: hidden;
+  border: 1px solid var(--border-primary);
+}
+
+thead {
+  background-color: var(--surface-300);
+}
+
+th {
+  font-family: var(--font-gothic);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--cursor-dark);
+  text-align: left;
+  padding: var(--space-xl) var(--space-2xl);
+  border-bottom: 2px solid var(--border-medium);
+}
+
+td {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  color: var(--cursor-dark);
+  padding: var(--space-xl) var(--space-2xl);
+  border-bottom: 1px solid var(--border-primary);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background-color: var(--surface-300);
+}
+
+/* ============================================
+   Horizontal Rules
+   ============================================ */
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border-primary);
+  margin: var(--space-5xl) 0;
+}
+
+/* ============================================
+   Images
+   ============================================ */
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-comfortable);
+  margin: var(--space-3xl) 0;
+  display: block;
+  border: 1px solid var(--border-primary);
+}
+
+/* Image captions */
+.md-image::after {
+  content: attr(data-alt);
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(230, 229, 224, 0.6);
+  margin-top: var(--space-base);
+  font-style: italic;
+  font-family: var(--font-serif);
+}
+
+/* ============================================
+   Footnotes
+   ============================================ */
+
+.footnotes {
+  margin-top: var(--space-5xl);
+  padding-top: var(--space-3xl);
+  border-top: 1px solid var(--border-primary);
+  font-size: 14px;
+  color: rgba(230, 229, 224, 0.6);
+  font-family: var(--font-serif);
+}
+
+.footnotes ol {
+  padding-left: var(--space-3xl);
+}
+
+.footnotes li {
+  margin-bottom: var(--space-base);
+}
+
+sup {
+  font-size: 0.75em;
+  vertical-align: super;
+}
+
+sup a {
+  color: var(--cursor-orange);
+  border-bottom: none;
+}
+
+/* ============================================
+   Table of Contents
+   ============================================ */
+
+.md-toc {
+  background-color: var(--surface-400);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-comfortable);
+  padding: var(--space-3xl);
+  margin: var(--space-3xl) 0;
+}
+
+.md-toc-content {
+  font-size: 15px;
+  font-family: var(--font-serif);
+}
+
+.md-toc-content ul {
+  padding-left: var(--space-3xl);
+}
+
+.md-toc-content a {
+  color: var(--cursor-dark);
+  border-bottom: none;
+}
+
+.md-toc-content a:hover {
+  color: var(--cursor-orange);
+}
+
+/* ============================================
+   Front Matter / YAML
+   ============================================ */
+
+.md-front-matter {
+  background-color: var(--surface-300);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-comfortable);
+  padding: var(--space-2xl);
+  margin-bottom: var(--space-3xl);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: rgba(230, 229, 224, 0.6);
+}
+
+/* ============================================
+   Math Equations
+   ============================================ */
+
+.MathJax_Display {
+  margin: var(--space-3xl) 0;
+}
+
+.md-rawblock-control {
+  color: rgba(230, 229, 224, 0.4);
+}
+
+/* ============================================
+   Diagrams (Mermaid, etc.)
+   ============================================ */
+
+.md-diagram-panel {
+  background-color: var(--surface-400);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-comfortable);
+  margin: var(--space-3xl) 0;
+  padding: var(--space-3xl);
+}
+
+/* ============================================
+   Focus Mode & Sidebar
+   ============================================ */
+
+/* Sidebar */
+#typora-sidebar {
+  background-color: var(--surface-300);
+  border-right: 1px solid var(--border-primary);
+}
+
+.sidebar-content {
+  color: rgba(230, 229, 224, 0.6);
+}
+
+.file-list-item {
+  color: rgba(230, 229, 224, 0.6);
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.file-list-item.active {
+  background-color: var(--surface-400);
+  color: var(--cursor-dark);
+  border-left: 3px solid var(--cursor-orange);
+}
+
+/* Outline panel */
+.outline-item {
+  color: rgba(230, 229, 224, 0.6);
+}
+
+.outline-item.active {
+  color: var(--cursor-orange);
+  font-weight: 500;
+}
+
+/* ============================================
+   Search & Replace
+   ============================================ */
+
+#search-panel {
+  background-color: var(--surface-300);
+  border: 1px solid var(--border-primary);
+}
+
+.searchpanel-search-input {
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-comfortable);
+  padding: var(--space-base) var(--space-xl);
+  font-size: 15px;
+  color: var(--cursor-dark);
+  background-color: var(--surface-400);
+  font-family: var(--font-system);
+}
+
+.searchpanel-search-input:focus {
+  outline: none;
+  border-color: var(--cursor-orange);
+  box-shadow: var(--shadow-focus);
+}
+
+/* ============================================
+   UI Components - Buttons (for toolbar)
+   ============================================ */
+
+.btn {
+  background-color: var(--surface-300);
+  color: var(--cursor-dark);
+  border: none;
+  border-radius: var(--radius-comfortable);
+  padding: var(--space-lg) var(--space-xl);
+  font-size: 14px;
+  font-family: var(--font-gothic);
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.btn:hover {
+  color: var(--error-warm);
+  box-shadow: var(--shadow-focus);
+}
+
+.btn-primary {
+  background-color: var(--surface-300);
+  color: var(--cursor-dark);
+}
+
+.btn-primary:hover {
+  color: var(--error-warm);
+}
+
+/* Pill buttons */
+.btn-pill {
+  background-color: var(--surface-400);
+  color: rgba(230, 229, 224, 0.6);
+  border-radius: var(--radius-pill);
+  padding: var(--space-4) var(--space-base);
+  font-size: 14px;
+}
+
+.btn-pill:hover {
+  color: var(--error-warm);
+}
+
+/* ============================================
+   Selection
+   ============================================ */
+
+::selection {
+  background-color: var(--surface-300);
+  color: var(--cursor-dark);
+}
+
+::-moz-selection {
+  background-color: var(--surface-300);
+  color: var(--cursor-dark);
+}
+
+/* ============================================
+   Scrollbar Styling
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cursor-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-300);
+  border-radius: var(--radius-comfortable);
+  border: 2px solid var(--cursor-cream);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--surface-400);
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  body {
+    background-color: var(--pure-white);
+    color: var(--true-black);
+  }
+
+  #write {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  pre {
+    background-color: var(--surface-300);
+    color: var(--cursor-dark);
+    border: 1px solid var(--border-primary);
+  }
+
+  blockquote {
+    background-color: transparent;
+    border-left-color: var(--cursor-orange);
+  }
+}
+
+/* ============================================
+   Responsive Adjustments
+   ============================================ */
+
+@media screen and (max-width: 768px) {
+  #write {
+    padding: var(--space-4xl) var(--space-2xl);
+  }
+
+  h1 {
+    font-size: 36px;
+    letter-spacing: -0.72px;
+  }
+
+  h2 {
+    font-size: 26px;
+    letter-spacing: -0.325px;
+  }
+
+  h3 {
+    font-size: 22px;
+    letter-spacing: -0.11px;
+  }
+
+  h4 {
+    font-size: 18px;
+    letter-spacing: normal;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #write {
+    padding: var(--space-3xl) var(--space-base);
+  }
+
+  h1 {
+    font-size: 28px;
+    letter-spacing: -0.3px;
+  }
+
+  h2 {
+    font-size: 22px;
+    letter-spacing: -0.11px;
+  }
+
+  h3 {
+    font-size: 18px;
+    letter-spacing: normal;
+  }
+
+  pre {
+    padding: var(--space-2xl);
+    font-size: 11px;
+  }
+}
+
+/* ============================================
+   Light Theme Support (Optional Override)
+   ============================================ */
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --cursor-dark: #26251e;
+    --cursor-cream: #f2f1ed;
+    --cursor-light: #e6e5e0;
+    --surface-100: #f7f7f4;
+    --surface-200: #f2f1ed;
+    --surface-300: #ebeae5;
+    --surface-400: #e6e5e0;
+    --surface-500: #e1e0db;
+    --border-primary: rgba(38, 37, 30, 0.1);
+    --border-medium: rgba(38, 37, 30, 0.2);
+    --border-strong: rgba(38, 37, 30, 0.55);
+    --border-solid: #26251e;
+    --border-light: #f2f1ed;
+    --shadow-card: rgba(0, 0, 0, 0.14) 0px 28px 70px,
+                   rgba(0, 0, 0, 0.1) 0px 14px 32px,
+                   rgba(38, 37, 30, 0.1) 0px 0px 0px 1px;
+    --shadow-ambient: rgba(0, 0, 0, 0.02) 0px 0px 16px,
+                      rgba(0, 0, 0, 0.008) 0px 0px 8px;
+    --shadow-focus: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
+
+  body {
+    background-color: var(--cursor-cream);
+    color: var(--cursor-dark);
+  }
+
+  code {
+    background-color: var(--surface-300);
+    border-color: var(--border-primary);
+  }
+
+  table {
+    background-color: var(--surface-400);
+    border-color: var(--border-primary);
+  }
+
+  thead {
+    background-color: var(--surface-300);
+  }
+
+  th {
+    color: var(--cursor-dark);
+  }
+
+  td {
+    color: var(--cursor-dark);
+    border-color: var(--border-primary);
+  }
+
+  tbody tr:hover {
+    background-color: var(--surface-300);
+  }
+
+  blockquote {
+    background-color: var(--surface-300);
+  }
+
+  img {
+    border-color: var(--border-primary);
+  }
+}

@@ -1,0 +1,715 @@
+/*
+Theme Name: Claude Anthropic Dark
+Description: A warm, editorial dark theme for Typora inspired by Claude's design system - featuring deep warm tones, serif typography, and organic warmth.
+Author: Generated from Claude Design System
+Version: 1.0.0
+*/
+
+/* ============================================
+   CSS Variables - Claude Design System (Dark Mode)
+   ============================================ */
+
+:root {
+  /* Primary Colors */
+  --anthropic-near-black: #141413;
+  --terracotta-brand: #c96442;
+  --coral-accent: #d97757;
+
+  /* Secondary & Accent */
+  --error-crimson: #b53333;
+  --focus-blue: #3898ec;
+
+  /* Surface & Background - Dark Mode */
+  --parchment: #141413;        /* Deep Dark - primary page background */
+  --ivory: #30302e;            /* Dark Surface - cards and containers */
+  --pure-white: #faf9f5;       /* Ivory - used as "white" in dark mode */
+  --warm-sand: #3d3d3a;        /* Dark Warm - interactive surfaces */
+  --dark-surface: #30302e;     /* Dark Surface - elevated elements */
+  --deep-dark: #141413;        /* Deep Dark - base background */
+
+  /* Neutrals & Text - Dark Mode */
+  --charcoal-warm: #b0aea5;    /* Warm Silver - primary text on dark */
+  --olive-gray: #b0aea5;       /* Warm Silver - secondary text */
+  --stone-gray: #87867f;       /* Stone Gray - tertiary text */
+  --dark-warm: #faf9f5;        /* Ivory - links and emphasized text */
+  --warm-silver: #b0aea5;      /* Warm Silver - metadata text */
+
+  /* Semantic & Borders - Dark Mode */
+  --border-cream: #30302e;     /* Dark Surface - standard borders */
+  --border-warm: #3d3d3a;      /* Dark Warm - prominent borders */
+  --border-dark: #30302e;      /* Dark Surface - dark borders */
+  --ring-warm: #5e5d59;        /* Olive Gray - ring shadows */
+  --ring-subtle: #4d4c48;      /* Charcoal Warm - subtle rings */
+  --ring-deep: #3d3d3a;        /* Dark Warm - deep rings */
+
+  /* Typography */
+  --font-serif: "Anthropic Serif", Georgia, "Times New Roman", serif;
+  --font-sans: "Anthropic Sans", Arial, system-ui, -apple-system, sans-serif;
+  --font-mono: "Anthropic Mono", "SF Mono", Monaco, Consolas, monospace;
+
+  /* Spacing System (8px base) */
+  --space-xs: 3px;
+  --space-sm: 4px;
+  --space-md: 6px;
+  --space-base: 8px;
+  --space-lg: 10px;
+  --space-xl: 12px;
+  --space-2xl: 16px;
+  --space-3xl: 20px;
+  --space-4xl: 24px;
+  --space-5xl: 30px;
+
+  /* Border Radius Scale */
+  --radius-sharp: 4px;
+  --radius-subtle: 6px;
+  --radius-comfortable: 8px;
+  --radius-generous: 12px;
+  --radius-very: 16px;
+  --radius-highly: 24px;
+  --radius-maximum: 32px;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--pure-white);
+  background-color: var(--parchment);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#write {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-5xl) var(--space-4xl);
+}
+
+/* ============================================
+   Typography Hierarchy
+   ============================================ */
+
+/* Headings - All use Anthropic Serif at weight 500 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  color: var(--pure-white);
+  margin-top: var(--space-5xl);
+  margin-bottom: var(--space-2xl);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 64px;
+  line-height: 1.1;
+  margin-top: var(--space-5xl);
+  margin-bottom: var(--space-3xl);
+}
+
+h2 {
+  font-size: 52px;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 36px;
+  line-height: 1.3;
+}
+
+h4 {
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+h5 {
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+h6 {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+/* Paragraphs */
+p {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--charcoal-warm);
+  margin-top: 0;
+  margin-bottom: var(--space-2xl);
+}
+
+/* Lead/Intro text */
+.md-meta-block p:first-of-type,
+#write > p:first-of-type {
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--olive-gray);
+}
+
+/* ============================================
+   Links
+   ============================================ */
+
+a {
+  color: var(--coral-accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-warm);
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--terracotta-brand);
+  border-bottom-color: var(--terracotta-brand);
+}
+
+/* ============================================
+   Inline Elements
+   ============================================ */
+
+/* Strong/Bold */
+strong,
+b {
+  font-weight: 600;
+  color: var(--pure-white);
+}
+
+/* Emphasis/Italic */
+em,
+i {
+  font-style: italic;
+  color: var(--charcoal-warm);
+}
+
+/* Strikethrough */
+del,
+s {
+  color: var(--stone-gray);
+  text-decoration: line-through;
+}
+
+/* Highlight */
+mark {
+  background-color: var(--warm-sand);
+  color: var(--pure-white);
+  padding: 2px 4px;
+  border-radius: var(--radius-subtle);
+}
+
+/* ============================================
+   Code
+   ============================================ */
+
+/* Inline Code */
+code {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  letter-spacing: -0.32px;
+  line-height: 1.6;
+  background-color: var(--dark-surface);
+  color: var(--charcoal-warm);
+  padding: 2px 6px;
+  border-radius: var(--radius-subtle);
+  border: 1px solid var(--border-cream);
+}
+
+/* Code Blocks */
+pre {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.32px;
+  background-color: var(--ivory);
+  color: var(--charcoal-warm);
+  padding: var(--space-4xl);
+  border-radius: var(--radius-very);
+  overflow-x: auto;
+  margin: var(--space-3xl) 0;
+  border: 1px solid var(--border-cream);
+}
+
+pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  font-size: inherit;
+  letter-spacing: inherit;
+}
+
+/* Code block language label */
+.md-fences {
+  background-color: var(--ivory);
+  border: 1px solid var(--border-cream);
+  border-radius: var(--radius-very);
+}
+
+/* ============================================
+   Blockquotes
+   ============================================ */
+
+blockquote {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--olive-gray);
+  margin: var(--space-3xl) 0;
+  padding: var(--space-3xl) var(--space-4xl);
+  border-left: 4px solid var(--terracotta-brand);
+  background-color: var(--ivory);
+  border-radius: 0 var(--radius-comfortable) var(--radius-comfortable) 0;
+}
+
+blockquote p {
+  margin-bottom: var(--space-base);
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Nested blockquotes */
+blockquote blockquote {
+  margin: var(--space-2xl) 0;
+  border-left-color: var(--coral-accent);
+}
+
+/* ============================================
+   Lists
+   ============================================ */
+
+ul, ol {
+  margin: var(--space-2xl) 0;
+  padding-left: var(--space-5xl);
+}
+
+li {
+  margin-bottom: var(--space-base);
+  line-height: 1.6;
+  color: var(--charcoal-warm);
+}
+
+li > ul,
+li > ol {
+  margin-top: var(--space-base);
+  margin-bottom: 0;
+}
+
+/* Ordered List Hierarchy - 有序列表层级样式 */
+ol {
+  list-style-type: decimal; /* Level 1: Arabic numerals (1, 2, 3) */
+}
+
+ol ol {
+  list-style-type: lower-roman; /* Level 2: Lowercase Roman numerals (i, ii, iii) */
+}
+
+ol ol ol {
+  list-style-type: lower-alpha; /* Level 3: Lowercase letters (a, b, c) */
+}
+
+ol ol ol ol {
+  list-style-type: decimal; /* Level 4+: Reset to Arabic numerals */
+}
+
+/* Task lists */
+input[type="checkbox"] {
+  margin-right: var(--space-base);
+  accent-color: var(--terracotta-brand);
+}
+
+/* ============================================
+   Tables
+   ============================================ */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-3xl) 0;
+  background-color: var(--ivory);
+  border-radius: var(--radius-comfortable);
+  overflow: hidden;
+  border: 1px solid var(--border-cream);
+}
+
+thead {
+  background-color: var(--warm-sand);
+}
+
+th {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--charcoal-warm);
+  text-align: left;
+  padding: var(--space-xl) var(--space-2xl);
+  border-bottom: 2px solid var(--border-warm);
+}
+
+td {
+  font-size: 15px;
+  color: var(--pure-white);
+  padding: var(--space-xl) var(--space-2xl);
+  border-bottom: 1px solid var(--border-cream);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background-color: var(--dark-surface);
+}
+
+/* ============================================
+   Horizontal Rules
+   ============================================ */
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border-warm);
+  margin: var(--space-5xl) 0;
+}
+
+/* ============================================
+   Images
+   ============================================ */
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-very);
+  margin: var(--space-3xl) 0;
+  display: block;
+}
+
+/* Image captions */
+.md-image::after {
+  content: attr(data-alt);
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: var(--stone-gray);
+  margin-top: var(--space-base);
+  font-style: italic;
+}
+
+/* ============================================
+   Footnotes
+   ============================================ */
+
+.footnotes {
+  margin-top: var(--space-5xl);
+  padding-top: var(--space-3xl);
+  border-top: 1px solid var(--border-warm);
+  font-size: 14px;
+  color: var(--olive-gray);
+}
+
+.footnotes ol {
+  padding-left: var(--space-3xl);
+}
+
+.footnotes li {
+  margin-bottom: var(--space-base);
+}
+
+sup {
+  font-size: 0.75em;
+  vertical-align: super;
+}
+
+sup a {
+  color: var(--terracotta-brand);
+  border-bottom: none;
+}
+
+/* ============================================
+   Table of Contents
+   ============================================ */
+
+.md-toc {
+  background-color: var(--ivory);
+  border: 1px solid var(--border-cream);
+  border-radius: var(--radius-generous);
+  padding: var(--space-3xl);
+  margin: var(--space-3xl) 0;
+}
+
+.md-toc-content {
+  font-size: 15px;
+}
+
+.md-toc-content ul {
+  padding-left: var(--space-3xl);
+}
+
+.md-toc-content a {
+  color: var(--coral-accent);
+  border-bottom: none;
+}
+
+.md-toc-content a:hover {
+  color: var(--terracotta-brand);
+}
+
+/* ============================================
+   Front Matter / YAML
+   ============================================ */
+
+.md-front-matter {
+  background-color: var(--warm-sand);
+  border: 1px solid var(--border-cream);
+  border-radius: var(--radius-comfortable);
+  padding: var(--space-2xl);
+  margin-bottom: var(--space-3xl);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--olive-gray);
+}
+
+/* ============================================
+   Math Equations
+   ============================================ */
+
+.MathJax_Display {
+  margin: var(--space-3xl) 0;
+}
+
+.md-rawblock-control {
+  color: var(--stone-gray);
+}
+
+/* ============================================
+   Diagrams (Mermaid, etc.)
+   ============================================ */
+
+.md-diagram-panel {
+  background-color: var(--ivory);
+  border: 1px solid var(--border-cream);
+  border-radius: var(--radius-very);
+  margin: var(--space-3xl) 0;
+  padding: var(--space-3xl);
+}
+
+/* ============================================
+   Focus Mode & Sidebar
+   ============================================ */
+
+/* Sidebar */
+#typora-sidebar {
+  background-color: var(--ivory);
+  border-right: 1px solid var(--border-cream);
+}
+
+.sidebar-content {
+  color: var(--olive-gray);
+}
+
+.file-list-item {
+  color: var(--charcoal-warm);
+  border-bottom: 1px solid var(--border-cream);
+}
+
+.file-list-item.active {
+  background-color: var(--warm-sand);
+  color: var(--pure-white);
+  border-left: 3px solid var(--terracotta-brand);
+}
+
+/* Outline panel */
+.outline-item {
+  color: var(--olive-gray);
+}
+
+.outline-item.active {
+  color: var(--terracotta-brand);
+  font-weight: 500;
+}
+
+/* ============================================
+   Search & Replace
+   ============================================ */
+
+#search-panel {
+  background-color: var(--ivory);
+  border: 1px solid var(--border-cream);
+}
+
+.searchpanel-search-input {
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius-generous);
+  padding: var(--space-base) var(--space-xl);
+  font-size: 15px;
+  color: var(--pure-white);
+  background-color: var(--dark-surface);
+}
+
+.searchpanel-search-input:focus {
+  outline: none;
+  border-color: var(--focus-blue);
+  box-shadow: 0 0 0 1px var(--focus-blue);
+}
+
+/* ============================================
+   UI Components - Buttons (for toolbar)
+   ============================================ */
+
+.btn {
+  background-color: var(--warm-sand);
+  color: var(--charcoal-warm);
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius-comfortable);
+  padding: var(--space-base) var(--space-xl);
+  font-size: 15px;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--border-warm);
+  box-shadow: 0 0 0 1px var(--ring-warm);
+}
+
+.btn-primary {
+  background-color: var(--terracotta-brand);
+  color: var(--pure-white);
+  border-color: var(--terracotta-brand);
+}
+
+.btn-primary:hover {
+  background-color: var(--coral-accent);
+  box-shadow: 0 0 0 1px var(--terracotta-brand);
+}
+
+/* ============================================
+   Selection
+   ============================================ */
+
+::selection {
+  background-color: var(--warm-sand);
+  color: var(--pure-white);
+}
+
+::-moz-selection {
+  background-color: var(--warm-sand);
+  color: var(--pure-white);
+}
+
+/* ============================================
+   Scrollbar Styling
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--parchment);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--warm-sand);
+  border-radius: var(--radius-generous);
+  border: 2px solid var(--parchment);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-warm);
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+
+@media print {
+  body {
+    background-color: var(--pure-white);
+    color: var(--anthropic-near-black);
+  }
+
+  #write {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  pre {
+    background-color: var(--warm-sand);
+    color: var(--charcoal-warm);
+    border: 1px solid var(--border-cream);
+  }
+
+  blockquote {
+    background-color: transparent;
+    border-left-color: var(--terracotta-brand);
+  }
+}
+
+/* ============================================
+   Responsive Adjustments
+   ============================================ */
+
+@media screen and (max-width: 768px) {
+  #write {
+    padding: var(--space-3xl) var(--space-2xl);
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #write {
+    padding: var(--space-2xl) var(--space-base);
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  pre {
+    padding: var(--space-2xl);
+    font-size: 14px;
+  }
+}
